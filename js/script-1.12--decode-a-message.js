@@ -10,8 +10,9 @@ console.info("page 41 - Decode a Message");
 let inputArray = ["18", "12312", "171"],
     modeArray  = ["U", "L", "P"],
     modeIndex = 0,
-    letters = "abcdefghijklmnopqrstuvwxyz",
-    punctuation = "!?,. ;\"'";
+    mode = modeArray[modeIndex];
+    //letters = "abcdefghijklmnopqrstuvwxyz",
+    //punctuation = "!?,. ;\"'";
 
 function processInput(input) {
   for (let i = 0; i < input.length; i++) {
@@ -30,6 +31,42 @@ function swapMode() {
 
   return modeInEffect;
 }
+let letters = "abcdefghijklmnopqrstuvwxyz".split(''),
+  punctuation = "!?,. ;\"'".split('');
 
-processInput(inputArray);
+
+function initializeUppercaseAnswers() {
+  let uppercaseAnswers = [];
+  console.log('UPPERCASE answers initialized');
+  for (let i = 0; i < letters.length; i++) {
+    uppercaseAnswers.push(letters[i].toUpperCase());
+  }
+  return uppercaseAnswers;
+}
+function initializeLowercaseAnswers() {
+  let lowercaseAnswers = [];
+  console.log('LOWERCASE answers initialized');
+  for (let i = 0; i < letters.length; i++) {
+    lowercaseAnswers.push(letters[i].toLowerCase());
+  }
+  return lowercaseAnswers;
+}
+function initializePunctuationAnswers() {
+  let punctuationAnswers = [];
+  console.log('PUNCTUATION answers initialized');
+  for (let i = 0; i < punctuation.length; i++) {
+    punctuationAnswers = punctuation;
+  }
+  return punctuationAnswers;
+}
+
+function initializeAnswerArrays() {
+  initializeUppercaseAnswers();
+  initializeLowercaseAnswers();
+  initializePunctuationAnswers();
+}
+
+
+//processInput(inputArray);
+initializeAnswerArrays();
 
