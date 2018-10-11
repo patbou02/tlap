@@ -6,13 +6,16 @@
 console.log("=== 1.12 - Decode a Message ===");
 console.info("page 41 - Decode a Message");
 
-// Variables
-let inputArray = ["18", "12312", "171"],
-    modeArray  = ["U", "L", "P"],
-    modeIndex = 0,
-    mode = modeArray[modeIndex];
-    //letters = "abcdefghijklmnopqrstuvwxyz",
-    //punctuation = "!?,. ;\"'";
+// Global Variables
+let inputArray       = ["18", "12312", "171"],
+    modeArray        = ["U", "L", "P"],
+    modeIndex        = 0,
+    mode             = modeArray[modeIndex],
+    letters          = "abcdefghijklmnopqrstuvwxyz".split(''),
+    punctuation      = "!?,. ;\"'".split(''),
+    uppercaseArray   = [],
+    lowercaseArray   = [],
+    punctuationArray = [];
 
 function processInput(input) {
   for (let i = 0; i < input.length; i++) {
@@ -31,14 +34,8 @@ function swapMode() {
 
   return modeInEffect;
 }
-let letters = "abcdefghijklmnopqrstuvwxyz".split(''),
-  punctuation = "!?,. ;\"'".split('');
-
 
 function initializeArrays(inputArray, mode) {
-  let uppercaseArray   = [],
-      lowercaseArray   = [],
-      punctuationArray = [];
   if (mode === "U") {
     console.log('UPPERCASE array initialized');
     for (let i = 0; i < inputArray.length; i++) {
