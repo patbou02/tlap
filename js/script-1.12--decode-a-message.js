@@ -19,7 +19,10 @@ let inputArray       = ["18", "12312", "171", "763", "98423", "1208", "216", "11
     divider,
     characterCode,
     inputCode,
-    inputCodeArray   = [];
+    inputCodeArray   = [],
+    character,
+    processedInputArray = [],
+    decodedMessage;
 
 function convertArrayStringsToNumbers() {
   for (let i = 0; i < inputArray.length; i++) {
@@ -82,30 +85,57 @@ function getCharacterCode(input, divider) {
   return characterCode;
 }
 
+function getCharacter(characterCode, mode) {
+  if (characterCode === 0) {
+    character = "";
+  } else {
+    if (mode === "U") {
+      character = uppercaseArray[characterCode - 1];
+    } else if (mode === "L") {
+      character = lowercaseArray[characterCode - 1];
+    } else if (mode === "P") {
+      character = punctuationArray[characterCode - 1];
+    }
+  }
+  return character;
+}
+
 function processInput(input) {
-  console.log(input);
+  //console.log(input);
   for (let i = 0; i < input.length; i++) {
-    console.log('current mode: ' + currentMode);
-    console.log('starting input: ' + input[i]);
+    //console.log('current mode: ' + currentMode);
+    //console.log('starting input: ' + input[i]);
     inputCode = getCharacterCode(input[i], getDivider(currentMode));
-    console.log('divider: ' + divider);
-    console.log('input code: ' + inputCode);
+    //console.log('divider: ' + divider);
+    //console.log('input code: ' + inputCode);
     inputCodeArray.push(inputCode);
     if (inputCodeArray[i] === 0) {
       currentMode = swapMode();
-      console.log('swapping mode to: ' + currentMode);
+      //console.log('swapping mode to: ' + currentMode);
     }
-    console.log('resulting mode: ' + currentMode);
-    console.log('input code in Code array: ' + inputCodeArray[i]);
-    console.log('=== moving on to next input value ===');
+    //console.log('resulting mode: ' + currentMode);
+    processedInputArray.push(getCharacter(characterCode, currentMode));
+    //console.log('input code in Code array: ' + inputCodeArray[i]);
+    //console.log('character in character array: ' + processedInputArray[i]);
+    //console.log('=== moving on to next input value ===');
   }
-  console.log(inputCodeArray);
+  //console.log(inputCodeArray);
+  //console.log  (processedInputArray);
+
+  return processedInputArray;
+}
+
+function decodeProcessedInput(input) {
+  decodedMessage = input.join('');
+
+  return console.log(decodedMessage);
 }
 
 convertArrayStringsToNumbers();
 
-initializeArrays(letters, "U");
-initializeArrays(letters, "L");
-initializeArrays(punctuation, "P");
+initializeArrays(letters, modeArray[0]);
+initializeArrays(letters, modeArray[1]);
+initializeArrays(punctuation, modeArray[2]);
 
 processInput(inputArray);
+decodeProcessedInput(processedInputArray);
