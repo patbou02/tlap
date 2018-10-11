@@ -7,22 +7,25 @@ console.log("=== 1.12 - Decode a Message ===");
 console.info("page 41 - Decode a Message");
 
 // Global Variables
-let inputArray       = ["18", "12312", "171", "763", "98423", "1208", "216", "11", "500", "18", "241", "0", "32", "20620", "27", "10"],
-    modeArray        = ["U", "L", "P"],
-    modeIndex        = 0,
-    currentMode      = modeArray[modeIndex],
-    letters          = "abcdefghijklmnopqrstuvwxyz".split(''),
-    punctuation      = "!?,. ;\"'".split(''),
-    uppercaseArray   = [],
-    lowercaseArray   = [],
-    punctuationArray = [],
+let modeIndex   = 0,
+    letters     = "abcdefghijklmnopqrstuvwxyz",
+    punctuation = "!?,. ;\"'",
     divider,
     characterCode,
     inputCode,
-    inputCodeArray   = [],
     character,
-    processedInputArray = [],
     decodedMessage;
+
+// Global Arrays
+let inputArray          = ["18", "12312", "171", "763", "98423", "1208", "216", "11", "500", "18", "241", "0", "32", "20620", "27", "10"],
+    modeArray           = ["U", "L", "P"],
+    currentMode         = modeArray[modeIndex],
+    lettersArray        = letters.split(''),
+    punctuationArray    = [],
+    uppercaseArray      = [],
+    lowercaseArray      = [],
+    inputCodeArray      = [],
+    processedInputArray = [];
 
 function convertArrayStringsToNumbers() {
   for (let i = 0; i < inputArray.length; i++) {
@@ -30,24 +33,22 @@ function convertArrayStringsToNumbers() {
   }
 }
 
-function initializeArrays(inputArray, mode) {
+function initializeArrays(input, mode) {
   if (mode === "U") {
     //console.log('UPPERCASE array initialized');
-    for (let i = 0; i < inputArray.length; i++) {
-      uppercaseArray.push(inputArray[i].toUpperCase());
+    for (let i = 0; i < input.length; i++) {
+      uppercaseArray.push(input[i].toUpperCase());
     }
     return uppercaseArray;
   } else if (mode === "L") {
     //console.log('LOWERCASE array initialized');
-    for (let i = 0; i < inputArray.length; i++) {
-      lowercaseArray.push(inputArray[i].toLowerCase());
+    for (let i = 0; i < input.length; i++) {
+      lowercaseArray.push(input[i].toLowerCase());
     }
     return lowercaseArray;
   } else if (mode === "P") {
     //console.log('PUNCTUATION array initialized');
-    for (let i = 0; i < inputArray.length; i++) {
-      punctuationArray = inputArray;
-    }
+    punctuationArray = punctuation.split('');
     return punctuationArray;
   }
 }
@@ -133,9 +134,9 @@ function decodeProcessedInput(input) {
 
 convertArrayStringsToNumbers();
 
-initializeArrays(letters, modeArray[0]);
-initializeArrays(letters, modeArray[1]);
-initializeArrays(punctuation, modeArray[2]);
+initializeArrays(lettersArray, modeArray[0]);
+initializeArrays(lettersArray, modeArray[1]);
+initializeArrays(punctuationArray, modeArray[2]);
 
 processInput(inputArray);
 decodeProcessedInput(processedInputArray);
