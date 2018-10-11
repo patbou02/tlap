@@ -35,38 +35,38 @@ let letters = "abcdefghijklmnopqrstuvwxyz".split(''),
   punctuation = "!?,. ;\"'".split('');
 
 
-function initializeUppercaseAnswers() {
-  let uppercaseAnswers = [];
-  console.log('UPPERCASE answers initialized');
-  for (let i = 0; i < letters.length; i++) {
-    uppercaseAnswers.push(letters[i].toUpperCase());
+function initializeArrays(inputArray, mode) {
+  let uppercaseArray   = [],
+      lowercaseArray   = [],
+      punctuationArray = [];
+  if (mode === "U") {
+    console.log('UPPERCASE array initialized');
+    for (let i = 0; i < inputArray.length; i++) {
+      uppercaseArray.push(inputArray[i].toUpperCase());
+    }
+    return uppercaseArray;
+  } else if (mode === "L") {
+    console.log('LOWERCASE array initialized');
+    for (let i = 0; i < inputArray.length; i++) {
+      lowercaseArray.push(inputArray[i].toLowerCase());
+    }
+    return lowercaseArray;
+  } else if (mode === "P") {
+    console.log('PUNCTUATION array initialized');
+    for (let i = 0; i < inputArray.length; i++) {
+      punctuationArray = inputArray;
+    }
+    return punctuationArray;
   }
-  return uppercaseAnswers;
-}
-function initializeLowercaseAnswers() {
-  let lowercaseAnswers = [];
-  console.log('LOWERCASE answers initialized');
-  for (let i = 0; i < letters.length; i++) {
-    lowercaseAnswers.push(letters[i].toLowerCase());
-  }
-  return lowercaseAnswers;
-}
-function initializePunctuationAnswers() {
-  let punctuationAnswers = [];
-  console.log('PUNCTUATION answers initialized');
-  for (let i = 0; i < punctuation.length; i++) {
-    punctuationAnswers = punctuation;
-  }
-  return punctuationAnswers;
 }
 
-function initializeAnswerArrays() {
-  initializeUppercaseAnswers();
-  initializeLowercaseAnswers();
-  initializePunctuationAnswers();
-}
+
+initializeArrays(letters, "U");
+initializeArrays(letters, "L");
+initializeArrays(punctuation, "P");
+
 
 
 //processInput(inputArray);
-initializeAnswerArrays();
+//initializeAnswerArrays();
 
