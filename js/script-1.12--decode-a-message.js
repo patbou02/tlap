@@ -1,8 +1,5 @@
 "use strict";
 
-// Shared functions in js/_shared.js file
-//let asciiCode = "5"; //prompt("Please enter one digit positive number (0 - 9):");
-
 console.log("=== 1.12 - Decode a Message ===");
 console.info("page 41 - Decode a Message");
 
@@ -86,16 +83,16 @@ function getCharacterCode(input, divider) {
   return characterCode;
 }
 
-function getCharacter(characterCode, mode) {
-  if (characterCode === 0) {
+function getCharacter(code, mode) {
+  if (code === 0) {
     character = "";
   } else {
     if (mode === "U") {
-      character = uppercaseArray[characterCode - 1];
+      character = uppercaseArray[code - 1];
     } else if (mode === "L") {
-      character = lowercaseArray[characterCode - 1];
+      character = lowercaseArray[code - 1];
     } else if (mode === "P") {
-      character = punctuationArray[characterCode - 1];
+      character = punctuationArray[code - 1];
     }
   }
   return character;
