@@ -1,7 +1,7 @@
 "use strict";
 
 console.log("=== 1.12 - Decode a Message ===");
-console.info("page 41 - Decode a Message");
+console.info("page 41 - Tracking State: Decode a Message by converting array of numbers into letters");
 
 // Global Variables
 let modeIndex   = 0,
