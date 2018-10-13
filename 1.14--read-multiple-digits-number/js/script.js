@@ -1,13 +1,13 @@
 "use strict";
 
-let input           = "4334569", //prompt("Please enter a positive or negative number.");
-    inputArray      = input.split(''),
-    digitsArray     = [],
+let answer,
+    answerArray = [],
+    finalAnswer = 0,
+    input       = prompt("Please enter a positive number."),
+    inputArray  = input.split(''),
+    unitArray   = [],
     unitMultiplier,
-    answerNumber,
-    answerArray     = [],
-    multiplierArray = [],
-    finalAnswer = 0;
+    unitMultiplierArray = [];
 
 function readMultipleDigitsNumber() {
   console.log("=== 1.14 - Read Multiple Digits Number ===");
@@ -17,10 +17,10 @@ function readMultipleDigitsNumber() {
 
   // push numbers to digitsArray
   for(let i = 0; i < inputArray.length; i++) {
-    digitsArray.push(parseInt(inputArray[i]));
+    unitArray.push(parseInt(inputArray[i]));
   }
 
-  console.log('The digits array contains the following digits: [' + digitsArray + '] and has the following length: ' + digitsArray.length);
+  console.log('The units array contains the following values: [' + unitArray + '] and has the following length: ' + unitArray.length);
 
   function processMultipliers(input) {
     for(let i = input.length; i > 0; i--) {
@@ -29,18 +29,18 @@ function readMultipleDigitsNumber() {
       } else {
         unitMultiplier *= 10;
       }
-      multiplierArray.unshift(unitMultiplier);
+      unitMultiplierArray.unshift(unitMultiplier);
     }
-    return console.log(multiplierArray);
+    return console.log(unitMultiplierArray);
   }
   processMultipliers(inputArray);
 
   function processInput(input) {
-    for(let i = 0; i < digitsArray.length; i++) {
-      answerNumber = digitsArray[i] * multiplierArray[i];
-      answerArray.push(answerNumber);
+    for(let i = 0; i < unitArray.length; i++) {
+      answer = unitArray[i] * unitMultiplierArray[i];
+      answerArray.push(answer);
       console.log('answer array contains: [' + answerArray + '].');
-      finalAnswer += answerNumber;
+      finalAnswer += answer;
     }
     return console.log(finalAnswer);
   }
@@ -48,3 +48,6 @@ function readMultipleDigitsNumber() {
 }
 
 readMultipleDigitsNumber();
+
+
+//TODO: extend to handle negative numbers
