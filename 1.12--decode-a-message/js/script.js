@@ -58,7 +58,6 @@ function getDivider(mode) {
 
 function getCharacterCode(input, divider) {
   characterCode = input % divider;
-
   return characterCode;
 }
 
@@ -97,7 +96,7 @@ function processInput(input) {
     console.log('     === moving on to next input value ===');
   }
   console.log(inputCodeArray);
-  console.log  (processedInputArray);
+  console.log(processedInputArray);
 
   return processedInputArray;
 }
