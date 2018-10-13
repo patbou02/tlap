@@ -11,7 +11,7 @@ function readTwoDigitNumber() {
     digitsArray.push(parseInt(inputArray[i]));
   }
 
-  console.log('The digits array contains the following digits: [' + digitsArray + '] and has the following length: ' + digits);
+  console.log('The digits array contains the following digits: [' + digitsArray + '] and has the following length: ' + digitsArray.length);
 
   let multiplier = 1,
       multiplierArray = [];
@@ -20,24 +20,21 @@ function readTwoDigitNumber() {
       if (i === 1) {
         multiplier = 10;
       } else {
-        while (i <= input.length) {
-          multiplier *= 10;
-        }
+        multiplier *= 10;
       }
-      multiplier*= 10;
       multiplierArray.push(multiplier);
     }
     return console.log(multiplierArray);
   }
 
   console.log('testing');
-  processMultipliers(input);
+  processMultipliers(inputArray);
   console.log('testing');
 
   //TODO: this is not complete
   function processInput(input, digits) {
-    for(let i = (digits - 1); i >= 0; i--) {
-
+    for(let i = (digitsArray.length - 1); i >= 0; i--) {
+      console.log('i am inside the for loop');
     }
   }
 
