@@ -13,16 +13,15 @@ function readTwoDigitNumber() {
 
   console.log('The digits array contains the following digits: [' + digitsArray + '] and has the following length: ' + digitsArray.length);
 
-  let multiplier = 1,
-      multiplierArray = [];
+  let multiplierArray = [];
   function processMultipliers(input) {
-    for(let i = 1; i <= input.length; i++) {
-      if (i === 1) {
-        multiplier = 10;
+    for(let i = input.length; i > 0; i--) {
+      if (i === input.length) {
+        unitMultiplier = 1;
       } else {
-        multiplier *= 10;
+        unitMultiplier *= 10;
       }
-      multiplierArray.push(multiplier);
+      multiplierArray.unshift(unitMultiplier);
     }
     return console.log(multiplierArray);
   }
