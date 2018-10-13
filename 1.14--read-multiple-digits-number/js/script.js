@@ -1,17 +1,17 @@
 "use strict";
 
-let input                 = "4334569"; //prompt("Please enter a positive or negative number.");
-let inputArray            = input.split(''),
-  digitsArray           = [],
-  unitMultiplier,
-  answerNumber,
-  answerArray           = [],
-  multiplierArray = [],
-  finalAnswer = 0;
+let input           = "4334569", //prompt("Please enter a positive or negative number.");
+    inputArray      = input.split(''),
+    digitsArray     = [],
+    unitMultiplier,
+    answerNumber,
+    answerArray     = [],
+    multiplierArray = [],
+    finalAnswer = 0;
 
-function readTwoDigitNumber() {
-  console.log("=== 1.14 - Read Two Digit Number PART 2 ===");
-  console.info("page 44 - Tracking State: Read two digit number. This is an expanded version of 1.13--read-two-digit-number so that it can accommodate larger numbers");
+function readMultipleDigitsNumber() {
+  console.log("=== 1.14 - Read Multiple Digits Number ===");
+  console.info("page 44 - Tracking State: Read multiple digits number. This is an expanded version of 1.13 so that it can accommodate larger numbers");
 
   console.log(`Starting number: ${input}`);
 
@@ -33,7 +33,6 @@ function readTwoDigitNumber() {
     }
     return console.log(multiplierArray);
   }
-
   processMultipliers(inputArray);
 
   function processInput(input) {
@@ -45,8 +44,7 @@ function readTwoDigitNumber() {
     }
     return console.log(finalAnswer);
   }
-
   processInput(inputArray);
 }
 
-readTwoDigitNumber();
+readMultipleDigitsNumber();
