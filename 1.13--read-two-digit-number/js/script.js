@@ -1,5 +1,16 @@
 "use strict";
 
+let input                 = "43"; //prompt("Please enter a positive or negative number.");
+let inputArray            = input.split(''),
+  digitsArray           = [],
+  unit                  = 1,
+  unitLabel,
+  unitMultiplier,
+  answerNumber,
+  answerArray           = [],
+  answerArrayMultiplier = [],
+  finalAnswer = 0;
+
 function readTwoDigitNumber() {
   console.log("=== 1.13 - Read Two Digit Number ===");
   console.info("page 44 - Tracking State: Read two digit number.");
