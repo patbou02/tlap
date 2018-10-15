@@ -13,6 +13,8 @@ let inputArray            = input.split(''),
   answerArrayMultiplier = [],
   finalAnswer = 0;
 
+//TODO: fix variables above or at least cleanup
+
 function readTwoDigitNumber() {
   console.log("=== 2.13 - Read Two Digit Number ===");
   console.info("page 44 - Tracking State: Read two digit number.");
