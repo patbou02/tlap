@@ -8,7 +8,7 @@ let inputArray = [18, 12312, 171, 763, 98423, 1208, 216, 11, 500, 18, 241, 0, 32
 
 function criterionBasedSearch(array) {
   console.log("=== 3.02 - Arrays: Criterion-Based Search ===");
-  console.info("page 58 - Array Fundamentals: Searching for a value that fits a specific criteria such as the highest value and outputing its position within the array.");
+  console.info("page 58 - Array Fundamentals: Searching for a value that fits a specific criteria such as the highest value and outputting its position within the array.");
 
   for (let i = 1; i < array.length; i++) {
     if (array[i] > highestValue) {
