@@ -10,7 +10,7 @@ function sequentialSearch(array) {
   console.log("=== 3.01 - Arrays: Sequential Search ===");
   console.info("page 58 - Array Fundamentals: Searching for a Specific Value.");
 
-  while((array[targetPosition] != targetValue)&&(targetPosition < array.length)) {
+  while((array[targetPosition] != targetValue) && (targetPosition < array.length)) {
     targetPosition++;
     if (targetPosition === array.length) {
       targetPosition = "VALUE NOT FOUND";
@@ -20,7 +20,7 @@ function sequentialSearch(array) {
   console.log('Array to be searched contains:');
   console.log(array);
   console.log(`Target being searched within array is: ${targetValue}.`);
-  console.log(`Position of target within array is: ${targetPosition}.`);
+  console.log(`Position of target within array is: ${targetPosition} (0 based).`);
 
 }
 
