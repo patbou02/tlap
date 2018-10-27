@@ -13,7 +13,7 @@ function insertionSortArray(array) {
   console.log("=== 3.04 - Arrays: Sorting Array Elements with Insertion Sort ===");
   console.log("page 60/61 - Insertion Sort");
   for (let i = startIndex + 1; i <= endIndex; i++) {
-    for (let j = i; ((j > startIndex) && (array[j - 1])) > array[j]; j--) {
+    for (let j = i; (j > startIndex) && (array[j - 1] > array[j]); j--) {
       temp = array[j - 1];
       array[j - 1] = array[j];
       array[j] = temp;
