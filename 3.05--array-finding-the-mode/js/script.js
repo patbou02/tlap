@@ -53,7 +53,7 @@ let ungroupedArr = [4, 7, 3, 8, 9, 7, 3, 9, 9, 3, 3, 10];
 
 function mostFrequentInUngroupedArray(arr) {
   console.log("=== 3.05 - Arrays: Solving Array Problems (UNGROUPED) ===");
-  console.log("page 60/64 - Finding the most common array element (mode) in a non-grouped array.");
+  console.log("page 64/65 - Finding the most common array element (mode) in a non-grouped array.");
   let mostFrequent, // don't know yet which one it is.
       currentFrequency = 0,
       highestFrequency = 0;
