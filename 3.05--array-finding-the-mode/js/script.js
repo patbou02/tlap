@@ -2,7 +2,6 @@
 
 // Shared functions in ../shared/_shared.js file
 
-/* - Write in PSEUDO CODE - */
 /* - Write in PSEUDO CODE -
 ARRAY;
 
@@ -26,12 +25,12 @@ let groupedArr = [4, 7, 7, 9, 9, 9, 8, 3, 3, 3, 3, 10];
 
 function mostFrequentInGroupedArray(arr) {
   console.log("=== 3.05 - Arrays: Solving Array Problems (GROUPED) ===");
-  console.log("page 60/64 - Finding the most common array element (mode) in a grouped array.");
+  console.log("page 60/64 - Finding the most common array element (aka: Mode) in a grouped array.");
   let mostFrequent, // don't know yet which one it is.
       currentFrequency = 0,
       highestFrequency = 0;
 
-  console.log(arr);
+  console.log(`Array: ${arr}`);
 
   for (let i = 0; i < arr.length; i++) {
     currentFrequency++;
@@ -49,11 +48,13 @@ function mostFrequentInGroupedArray(arr) {
 }
 mostFrequentInGroupedArray(groupedArr);
 
+console.log('\n\n\n');
+
 let ungroupedArr = [4, 7, 3, 8, 9, 7, 3, 9, 9, 3, 3, 10];
 
 function mostFrequentInUngroupedArray(arr) {
   console.log("=== 3.05 - Arrays: Solving Array Problems (UNGROUPED) ===");
-  console.log("page 64/65 - Finding the most common array element (mode) in a non-grouped array.");
+  console.log("page 64/65 - Finding the most common array element (aka: Mode) in a non-grouped array.");
   let mostFrequent, // don't know yet which one it is.
       currentFrequency = 0,
       highestFrequency = 0;
@@ -75,8 +76,6 @@ function mostFrequentInUngroupedArray(arr) {
       currentFrequency = 0;
     }
   }
-
-
 
   return console.log(`The most frequent element (${mostFrequent}) is present ${highestFrequency} times in the Array.`);
 }
