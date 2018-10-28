@@ -60,7 +60,7 @@ function mostFrequentInUngroupedArray(arr) {
 
   console.log(`Starting Array: ${arr}`);
 
-  Shared.arraySortSimple(arr);
+  Shared.arraySortInsertion(arr);
 
   console.log(`Sorted Array: ${arr}`);
 

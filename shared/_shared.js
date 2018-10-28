@@ -57,10 +57,23 @@ const Shared = (function() {
       checksum = parseInt(checksum);        // convert checksum from string to number
       return console.info(`Final computed checksum number is: ${checksum}`);
     },
-    arraySortSimple:          function(arr) {
+    arraySortSimple:         function(arr) {
       arr.sort(function(a, b) {
         return a - b;
       });
     },
+    arraySortInsertion:      function(arr) {
+      let startIndex = 0,
+          endIndex = arr.length - 1,
+          temp;
+
+      for (let i = startIndex + 1; i <= endIndex; i++) {
+        for (let j = i; ((j > startIndex) && (arr[j - 1] > arr[j])); j--) {
+          temp = arr[j - 1];
+          arr[j - 1] = arr[j];
+          arr[j] = temp;
+        }
+      }
+    }
   };
 })();
