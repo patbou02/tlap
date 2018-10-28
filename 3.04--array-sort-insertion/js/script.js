@@ -2,13 +2,13 @@
 
 // Shared functions in ../shared/_shared.js file
 
-let arrayInput = [5, 10, 4, 36, 90, 1];
-
-console.log(arrayInput);
+let array = [5, 10, 4, 36, 90, 1];
 
 function insertionSortArray(arr) {
   console.log("=== 3.04 - Arrays: Sorting Array Elements with Insertion Sort ===");
   console.log("page 60/61 - Insertion Sort");
+  
+  console.log(array);
 
   let startIndex = 0,
       endIndex = arr.length - 1,
@@ -34,6 +34,6 @@ function insertionSortArray(arr) {
   }
 }
 
-insertionSortArray(arrayInput);
+insertionSortArray(array);
 
-console.log(arrayInput);
+console.log(array);
