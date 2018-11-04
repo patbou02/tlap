@@ -29,4 +29,23 @@ function getHighestGrade(arr) {
   return console.log(highestGrade);
 }
 
-getHighestGrade(studentsArray);
+//getHighestGrade(studentsArray);
+
+function getHighestPosition(arr) {
+  console.log("=== 3.08 - Arrays: Non Scalar ===");
+  console.log("page 70/71 - This function tracks the POSITION (location) within the array and is preferable since this way we can retrieve ANY data for that student later.");
+  let highestPosition = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i][0] > arr[highestPosition][0]) {
+      highestPosition = i;
+    }
+  }
+  return arr[highestPosition];
+}
+
+let studentWithHighestGrade = getHighestPosition(studentsArray),
+    highestGradeNAME = studentWithHighestGrade[2],
+    highestGradeID = studentWithHighestGrade[1],
+    highestGradeGRADE = studentWithHighestGrade[0];
+
+console.log(`The student with the highest grade is called ${highestGradeNAME}. His student ID is ${highestGradeID} and his grade is ${highestGradeGRADE}.`);
