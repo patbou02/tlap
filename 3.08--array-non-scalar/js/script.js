@@ -20,10 +20,10 @@ console.log(studentsArray);
 function getHighestGrade(arr) {
   console.log("=== 3.08 - Arrays: Non Scalar ===");
   console.log("page 70 - This function gets the highest grade from an array nested within another array and with non integer values.");
-  let highestGrade = studentsArray[0][0];
-  for (let i = 1; i < studentsArray.length; i++) {
-    if (studentsArray[i][0] > highest) {
-      highest = studentsArray[i][0];
+  let highestGrade = arr[0][0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i][0] > highestGrade) {
+      highestGrade = arr[i][0];
     }
   }
   return console.log(highestGrade);
