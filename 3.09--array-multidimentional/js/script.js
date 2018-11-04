@@ -26,4 +26,21 @@ function getHighestSale(arr) {
   return console.log(highestSale);
 }
 
-getHighestSale(sales);
+//getHighestSale(sales);
+
+function getHighestAverageSale(arr) {
+  console.log("=== 3.09 - Arrays: Multi-dimentional Example 2 ===");
+  console.log("page 72/73 - How to handle multi-dimentional arrays (Example 2).");
+
+  let highestAverage = Shared.arrayAverage(arr[0]);
+
+  for (let agent = 0; agent < arr.length; agent++) {
+    let agentAverage = Shared.arrayAverage(arr[agent]);
+    if (agentAverage > highestAverage) {
+      highestAverage = agentAverage;
+    }
+  }
+  return console.log(highestAverage);
+}
+
+getHighestAverageSale(sales);
