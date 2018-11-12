@@ -20,15 +20,6 @@ function characterAt(arr, pos) {
 characterAt(inputString, 1);
 
 // Step 3: combine both #1 and #2 together.
-function length(arr) {
-  let count = 0;
-  // find array index whose value equal null or 0.
-  while(arr[count] !== 0) {
-    count++;
-  }
-  return count;
-}
-
 function characterAtFinal(str, pos) {
   let arr = str.split('');
 
@@ -38,19 +29,16 @@ characterAtFinal(inputString, 2);
 
 function append(arr, char) {
 
-  // reference helper function length().
-  let oldLength = length(arr);
-
   // create new array
   let newArr = [];
 
   // copy original array elements into new array.
-  for (let i = 0; i < oldLength; i++) {
+  for (let i = 0; i < arr.length; i++) {
     newArr[i] = arr[i];
   }
 
-  newArr[oldLength] = char;  // append 'char' to end of new array.
-  newArr[oldLength + 1] = 0; // append null value (0) after appended character in new array.
+  newArr[arr.length] = char;  // append 'char' to end of new array.
+
   arr = newArr; // set original array equal to new array.
 
   return arr;
@@ -59,13 +47,11 @@ function append(arr, char) {
 function appendTester(str) {
   let testArray = convertStringToArray(str);
   console.log(testArray);
-  testArray.push(0);
-  console.log(testArray);
   console.log(append(testArray, '!'));
 }
 
-//appendTester('testing');
-//appendTester('');
+appendTester('testing');
+appendTester('');
 
 // Step 4: create concatenate function.
 function concatenate(arr1, arr2) {
@@ -79,7 +65,9 @@ function concatenate(arr1, arr2) {
     newArr[arr1.length + j] = arr2[j];
   }
 
-  console.log(newArr);
+  arr1 = newArr;
+
+  return arr1;
 }
 
 function concatenateTester(str1, str2) {
@@ -88,9 +76,9 @@ function concatenateTester(str1, str2) {
   let testArr1 = convertStringToArray(str1),
       testArr2 = convertStringToArray(str2);
 
-  console.log(`Converted to arrays these strings are now equal '${testArr1}' and '${testArr2}'.`);
+  console.log(`Converted to arrays, these strings are now '${testArr1}' and '${testArr2}'.`);
 
-  concatenate(testArr1, testArr2);
+  console.log(concatenate(testArr1, testArr2));
 }
 
 concatenateTester('test', 'bed');
