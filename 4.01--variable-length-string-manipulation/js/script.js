@@ -65,7 +65,9 @@ function concatenate(arr1, arr2) {
     newArr[arr1.length + j] = arr2[j];
   }
 
-  console.log(newArr);
+  arr1 = newArr;
+
+  return arr1;
 }
 
 function concatenateTester(str1, str2) {
@@ -74,9 +76,9 @@ function concatenateTester(str1, str2) {
   let testArr1 = convertStringToArray(str1),
       testArr2 = convertStringToArray(str2);
 
-  console.log(`Converted to arrays these strings are now equal '${testArr1}' and '${testArr2}'.`);
+  console.log(`Converted to arrays, these strings are now '${testArr1}' and '${testArr2}'.`);
 
-  concatenate(testArr1, testArr2);
+  console.log(concatenate(testArr1, testArr2));
 }
 
-//concatenateTester('test', 'bed');
+concatenateTester('test', 'bed');
