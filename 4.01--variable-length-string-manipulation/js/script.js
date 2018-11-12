@@ -20,6 +20,15 @@ function characterAt(arr, pos) {
 characterAt(inputString, 1);
 
 // Step 3: combine both #1 and #2 together.
+function length(arr) {
+  let count = 0;
+  // find array index whose value equal null or 0.
+  while(arr[count] !== 0) {
+    count++;
+  }
+  return count;
+}
+
 function characterAtFinal(str, pos) {
   let arr = str.split('');
 
@@ -28,12 +37,9 @@ function characterAtFinal(str, pos) {
 characterAtFinal(inputString, 2);
 
 function append(arr, char) {
-  let oldLength = 0;
 
-  // find array index whose value equal null or 0.
-  while(arr[oldLength] !== 0) {
-    oldLength++;
-  }
+  // reference helper function length().
+  let oldLength = length(arr);
 
   // create new array
   let newArr = [];
