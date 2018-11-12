@@ -21,11 +21,13 @@ characterAt(inputString, 1);
 
 // Step 3: combine both #1 and #2 together.
 function characterAtFinal(str, pos) {
+  console.log("=== 4.01 - Variable-Length String Manipulation ===");
+  console.log("page 91/92 - Output character at position (pos) within string.");
   let arr = str.split('');
 
   return arr[pos];
 }
-characterAtFinal(inputString, 2);
+console.log(characterAtFinal(inputString, 2));
 
 function append(arr, char) {
 
