@@ -64,5 +64,33 @@ function appendTester(str) {
   console.log(append(testArray, '!'));
 }
 
-appendTester('testing');
-appendTester('');
+//appendTester('testing');
+//appendTester('');
+
+// Step 4: create concatenate function.
+function concatenate(arr1, arr2) {
+  let newArr = [];
+
+  // copy arr1 element values to new array.
+  for (let i = 0; i < arr1.length; i++) {
+    newArr[i] = arr1[i];
+  }
+  for (let j = 0; j < arr2.length; j++) {
+    newArr[arr1.length + j] = arr2[j];
+  }
+
+  console.log(newArr);
+}
+
+function concatenateTester(str1, str2) {
+  console.log(`Entered strings are '${str1}' and '${str2}'.`);
+
+  let testArr1 = convertStringToArray(str1),
+      testArr2 = convertStringToArray(str2);
+
+  console.log(`Converted to arrays these strings are now equal '${testArr1}' and '${testArr2}'.`);
+
+  concatenate(testArr1, testArr2);
+}
+
+concatenateTester('test', 'bed');
