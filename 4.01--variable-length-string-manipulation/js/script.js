@@ -20,15 +20,6 @@ function characterAt(arr, pos) {
 characterAt(inputString, 1);
 
 // Step 3: combine both #1 and #2 together.
-function length(arr) {
-  let count = 0;
-  // find array index whose value equal null or 0.
-  while(arr[count] !== 0) {
-    count++;
-  }
-  return count;
-}
-
 function characterAtFinal(str, pos) {
   let arr = str.split('');
 
@@ -39,7 +30,7 @@ characterAtFinal(inputString, 2);
 function append(arr, char) {
 
   // reference helper function length().
-  let oldLength = length(arr);
+  let oldLength = arr.length;
 
   // create new array
   let newArr = [];
@@ -64,8 +55,8 @@ function appendTester(str) {
   console.log(append(testArray, '!'));
 }
 
-//appendTester('testing');
-//appendTester('');
+appendTester('testing');
+appendTester('');
 
 // Step 4: create concatenate function.
 function concatenate(arr1, arr2) {
@@ -93,4 +84,4 @@ function concatenateTester(str1, str2) {
   concatenate(testArr1, testArr2);
 }
 
-concatenateTester('test', 'bed');
+//concatenateTester('test', 'bed');
