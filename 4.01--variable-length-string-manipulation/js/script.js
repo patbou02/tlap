@@ -59,3 +59,4 @@ function appendTester(str) {
 }
 
 appendTester('testing');
+appendTester('');
