@@ -3,9 +3,9 @@
 // Shared functions in ../shared/_shared.js file
 
 let inputString = "test";
-console.log('Starting string: ' + inputString);
+//console.log('Starting string: ' + inputString);
 let inputArray = inputString.split('');
-console.log('Starting string converted to array: ' + inputArray);
+//console.log('Starting string converted to array: ' + inputArray);
 
 // Step 1: convert string to array
 function convertStringToArray(str) {
@@ -47,12 +47,15 @@ function append(arr, char) {
   newArr[oldLength + 1] = 0; // append null value (0) after appended character in new array.
   arr = newArr; // set original array equal to new array.
 
-  return console.log(arr);
+  return arr;
 }
 
-function appendTester() {
-  let testArray = ['t', 'e', 's', 't', 0];
-  append(testArray, '!');
+function appendTester(str) {
+  let testArray = convertStringToArray(str);
+  console.log(testArray);
+  testArray.push(0);
+  console.log(testArray);
+  console.log(append(testArray, '!'));
 }
 
-appendTester();
+appendTester('testing');
