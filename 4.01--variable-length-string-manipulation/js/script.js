@@ -3,9 +3,9 @@
 // Shared functions in ../shared/_shared.js file
 
 let inputString = "test";
-console.log(inputString);
+console.log('Starting string: ' + inputString);
 let inputArray = inputString.split('');
-console.log(inputArray);
+console.log('Starting string converted to array: ' + inputArray);
 
 // Step 1: convert string to array
 function convertStringToArray(str) {
