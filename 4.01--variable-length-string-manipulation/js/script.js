@@ -41,7 +41,7 @@ function append(arr, char) {
   }
 
   newArr[oldLength] = char;  // append 'char' to end of new array.
-  newArr[oldLength + 1] = 0; // append null value (0) after appended character in new array.
+
   arr = newArr; // set original array equal to new array.
 
   return arr;
@@ -49,8 +49,6 @@ function append(arr, char) {
 
 function appendTester(str) {
   let testArray = convertStringToArray(str);
-  console.log(testArray);
-  testArray.push(0);
   console.log(testArray);
   console.log(append(testArray, '!'));
 }
