@@ -29,18 +29,15 @@ characterAtFinal(inputString, 2);
 
 function append(arr, char) {
 
-  // reference helper function length().
-  let oldLength = arr.length;
-
   // create new array
   let newArr = [];
 
   // copy original array elements into new array.
-  for (let i = 0; i < oldLength; i++) {
+  for (let i = 0; i < arr.length; i++) {
     newArr[i] = arr[i];
   }
 
-  newArr[oldLength] = char;  // append 'char' to end of new array.
+  newArr[arr.length] = char;  // append 'char' to end of new array.
 
   arr = newArr; // set original array equal to new array.
 
